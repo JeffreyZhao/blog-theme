@@ -17,6 +17,11 @@ legend{color:#000;}
 fieldset,img{border:0;}
 button,input,select,textarea{font-size:100%;}
 table{border-collapse:collapse;border-spacing:0;}
+nav {display:block;}
+header {display:block;}
+aside { display:block;}
+footer { display:block;}
+section { display:block;}
 
 /******************************
  * Layout
@@ -25,18 +30,18 @@ body {
 	min-width: 980px;
 }
 
-#header, #content, #footer-container
+header, #content, #footer-container
 {
     min-width: 960px;
     max-width: 1600px;
     margin: 0 auto;
     padding: 0 10px;
 }
-#header
+header
 {
     height: 129px;
 }
-#footer
+footer
 {
     background-color: #31363e;
     color: #fff;
@@ -165,11 +170,12 @@ body
     margin-top: -3px;
 }
 /* nav */
-#nav
+nav
 {
     float: right;
 }
-#nav li
+
+nav a
 {
     float: left;
     background: url(images/mnuSep.gif) no-repeat 0 1px;
@@ -177,15 +183,15 @@ body
     line-height: 75px;
     padding: 0 15px;
 }
-#nav li:last-child
+nav a:last-child
 {
     padding-right: 0;
 }
-#nav .rss
+nav .rss
 {
     padding: 0 0 0 15px;
 }
-#nav .rss a
+nav a.rss
 {
     width: 64px;
     height: 42px;
@@ -194,23 +200,23 @@ body
     text-indent: -64px;
     overflow: hidden;
 }
-#nav .rss a:hover
+nav a.rss:hover
 {
     background-position: 100% 0;
 }
-#nav a
+nav a
 {
     display: block;
     font-weight: 700;
     text-transform: uppercase;
     color: #565e39;
 }
-#nav a:hover
+nav a:hover
 {
     color: #f36;
 }
 
-#nav .current a
+nav a.current
 {
     text-decoration: underline;
     background: url(images/mnuIndicator.gif) no-repeat 50% 0;
@@ -262,6 +268,8 @@ body
     line-height: 120%;
     margin: 0;
     padding: 5px 0;
+    display:block;
+    float:none;
     background-image: url(images/dotsH.gif);
     background-position: bottom left;
     background-repeat: repeat-x;

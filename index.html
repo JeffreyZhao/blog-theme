@@ -3,12 +3,20 @@
 <head>
     <title>Jeffery Zhao</title>
     <meta charset="utf-8" />
+    <script type="text/javascript">
+        document.createElement("header");
+        document.createElement("nav");
+        document.createElement("aside");
+        document.createElement("div");
+        document.createElement("footer");
+        document.createElement("section");
+    </script>
 
     <link type="text/css" rel="Stylesheet" href="styles/site.css" />
 
 </head>
 <body>
-    <div id="header">
+    <header>
         <div id="top">
             <a id="minyx" href="#">Spiga</a>
             <ul id="menu">
@@ -21,15 +29,15 @@
             <a href="#">老赵点滴 - 追求编程之美</a>
             <small>先做人，再做技术人员，最后做程序员。打造国内最好的.NET技术博客。</small>
         </h1>
-        <ul id="nav">
-            <li class="current"><a href="#">Home</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">Gallery</a></li>
-            <li class="rss"><a href="#">RSS</a></li>
-        </ul>
-    </div>
+        <nav>
+            <a href="#" class="current">Home</a>
+            <a href="#">Contact</a>
+            <a href="#">Gallery</a>
+            <a href="#" class="rss">RSS</a>
+        </nav>
+    </header>
     <div id="content">
-        <div id="sidebar">
+        <aside id="sidebar">
             <div class="about block">
                 <h2>About</h2>
                 <img style="float: left; margin: 4px 6px 5px 0;" src="http://images.cnblogs.com/cnblogs_com/JeffreyZhao/168980/o_blog_me_a.png" />
@@ -236,9 +244,9 @@
                     </ul>
                 </div>
             </div>
-        </div>
+        </aside>
         <div id="main">
-            <div class="post">
+            <section class="post">
                 <h2> 
                     <a href="#">Node.js中相同模块是否会被加载多次？</a></h2> 
                 <small>
@@ -249,7 +257,7 @@
                     775
                     visits</small>
                 <div class="entry">
-                    <strong>摘要：</strong>JavaScript的包管理一直是个软肋，但既然它流行了，既然人们想要用它做大事了，就要开始为它制定一些模块的约定。Node.js使用了CommonJS模块机制，最近在InfoQ上也有一篇文章讨论了这方面的问题。这篇文章提到Node.js在载入模块时，aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa如果之前该模块已经加载过则不会有重复开销，因为模块加载有缓存机制。这篇文章是我初审的，当时也正好在思考Jscex在Node.js使用时的模块化问题，但研究了它的规则之后，我发现在某些情况下还是可能加载多次。现在我们便来分析这个问题。
+                    <p><strong>摘要：</strong>JavaScript的包管理一直是个软肋，但既然它流行了，既然人们想要用它做大事了，就要开始为它制定一些模块的约定。Node.js使用了CommonJS模块机制，最近在InfoQ上也有一篇文章讨论了这方面的问题。这篇文章提到Node.js在载入模块时，aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa如果之前该模块已经加载过则不会有重复开销，因为模块加载有缓存机制。这篇文章是我初审的，当时也正好在思考Jscex在Node.js使用时的模块化问题，但研究了它的规则之后，我发现在某些情况下还是可能加载多次。现在我们便来分析这个问题。</p>
                         <a href="#" title="Node.js中相同模块是否会被加载多次？" class="desc_link">阅读全文</a>
                     </div>
 
@@ -265,9 +273,9 @@
                     <li class="icon bullet"><strong>Tags: </strong>
                         <a href="#">Jscex</a>, <a href="#">Node.js</a>, <a href="#">模块</a></li>
                 </ul>
-            </div>
+            </section>
 
-            <div class="post">
+            <section class="post">
                 <h2> 
                     <a href="#">受禁锢的异步编程思维</a></h2> 
                 <small>
@@ -294,9 +302,9 @@
                     <li class="icon bullet"><strong>Tags: </strong>
                         <a href="#">Jscex</a>, <a href="#">异步</a></li>
                 </ul>
-            </div>
+            </section>
 
-            <div class="post">
+            <section class="post">
                 <h2> 
                     <a href="#">Jscex正式发布至npm</a></h2> 
                 <small>
@@ -323,9 +331,9 @@
                     <li class="icon bullet"><strong>Tags: </strong>
                         <a href="#">Jscex</a>, <a href="#">Node.js</a>, <a href="#">npm</a>, <a href="#">jscex-jit</a>, <a href="#">jscex-async</a></li>
                 </ul>
-            </div>
+            </section>
 
-            <div class="post">
+            <section class="post">
                 <h2> 
                     <a href="#">尾递归对时间与空间复杂度的影响（上）</a></h2> 
                 <small>
@@ -352,9 +360,9 @@
                     <li class="icon bullet"><strong>Tags: </strong>
                         <a href="#">尾递归</a></li>
                 </ul>
-            </div>
+            </section>
 
-            <div class="post">
+            <section class="post">
                 <h2> 
                     <a href="#">挖坟鞭尸：当年Sun公司的白皮书《About Microsoft “Delegates”》</a></h2> 
                 <small>
@@ -381,9 +389,9 @@
                     <li class="icon bullet"><strong>Tags: </strong>
                         <a href="#">Sun</a>, <a href="#">Java</a>, <a href="#">Delegate</a>, <a href="#">C#</a></li>
                 </ul>
-            </div>
+            </section>
 
-            <div class="post">
+            <section class="post">
                 <h2> 
                     <a href="#">老赵书托（4）：浪潮之巅（内含牢骚，不喜勿入）</a></h2> 
                 <small>
@@ -410,9 +418,9 @@
                     <li class="icon bullet"><strong>Tags: </strong>
                         <a href="#">书籍推荐</a>, <a href="#">浪潮之巅</a>, <a href="#">Borland传奇</a>, <a href="#">观止</a></li>
                 </ul>
-            </div>
+            </section>
 
-            <div class="post">
+            <section class="post">
                 <h2> 
                     <a href="#">使用Mono.Cecil辅助ASP.NET MVC使用dynamic类型Model</a></h2> 
                 <small>
@@ -439,9 +447,9 @@
                     <li class="icon bullet"><strong>Tags: </strong>
                         <a href="#">Mono</a>, <a href="#">Cecil</a>, <a href="#">ASP.NET MVC</a>, <a href="#">dynamic</a></li>
                 </ul>
-            </div>
+            </section>
 
-            <div class="post">
+            <section class="post">
                 <h2> 
                     <a href="#">在.NET平台下使用C#交互式控制台（上）：简介</a></h2> 
                 <small>
@@ -468,9 +476,9 @@
                     <li class="icon bullet"><strong>Tags: </strong>
                         <a href="#">Mono</a>, <a href="#">交互式控制台</a>, <a href="#">REPL</a></li>
                 </ul>
-            </div>
+            </section>
 
-            <div class="post">
+            <section class="post">
                 <h2> 
                     <a href="#">谈谈年度最佳代码“不管你们信不信，反正我信了”</a></h2> 
                 <small>
@@ -497,9 +505,9 @@
                     <li class="icon bullet"><strong>Tags: </strong>
                         <a href="#">风格</a>, <a href="#">语义</a>, <a href="#">副作用</a>, <a href="#">优化</a></li>
                 </ul>
-            </div>
+            </section>
 
-            <div class="post">
+            <section class="post">
                 <h2> 
                     <a href="#">基于Node.js、Express和Jscex开发的ToDo网站示例</a></h2> 
                 <small>
@@ -526,9 +534,9 @@
                     <li class="icon bullet"><strong>Tags: </strong>
                         <a href="#">Jscex</a>, <a href="#">Node.js</a>, <a href="#">Express</a></li>
                 </ul>
-            </div>
+            </section>
 
-            <div class="post">
+            <section class="post">
                 <h2> 
                     <a href="#">从今开始远离纸版图书</a></h2> 
                 <small>
@@ -555,9 +563,9 @@
                     <li class="icon bullet"><strong>Tags: </strong>
                         <a href="#">图书</a>, <a href="#">出售</a></li>
                 </ul>
-            </div>
+            </section>
 
-            <div class="post">
+            <section class="post">
                 <h2> 
                     <a href="#">IBM面试记</a></h2> 
                 <small>
@@ -584,7 +592,7 @@
                     <li class="icon bullet"><strong>Tags: </strong>
                         <a href="#">IBM</a>, <a href="#">面试</a></li>
                 </ul>
-            </div>
+            </section>
         </div>
         
         <div id="pager">
@@ -604,7 +612,7 @@
     
         <br class="clear" />
     </div>
-    <div id="footer">
+    <footer>
         <div id="footer-container">            
             <a id="logo" href="#" title="Agencia Interactiva Spiga">www.spiga.com.mx</a>
             <p id="copyright">Copyright ©2012 Jeffrey Zhao</p>
