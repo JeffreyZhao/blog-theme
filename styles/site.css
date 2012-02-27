@@ -261,7 +261,7 @@ nav a.current
     margin-bottom: 30px;
 }
 
-.post h2 {
+.post h1 {
     font-size: 22px;
     font-weight: normal;
     letter-spacing: -1px;
@@ -275,11 +275,11 @@ nav a.current
     background-repeat: repeat-x;
 }
 
-.post h2 a
+.post h1 a
 {
     color: #69c;    
 }
-.post h2 a:hover
+.post h1 a:hover
 {
     color: #f36;
 }
