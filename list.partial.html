@@ -1,0 +1,347 @@
+﻿<section class="post">
+    <h1> 
+        <a href="#">Node.js中相同模块是否会被加载多次？</a></h1> 
+    <small>
+        2011-12-27 15:19
+        <!-- 2011-12-28 04:45 -->
+        by
+        老赵,
+        775
+        visits</small>
+    <div class="entry">
+        <p><strong>摘要：</strong>JavaScript的包管理一直是个软肋，但既然它流行了，既然人们想要用它做大事了，就要开始为它制定一些模块的约定。Node.js使用了CommonJS模块机制，最近在InfoQ上也有一篇文章讨论了这方面的问题。这篇文章提到Node.js在载入模块时，aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa如果之前该模块已经加载过则不会有重复开销，因为模块加载有缓存机制。这篇文章是我初审的，当时也正好在思考Jscex在Node.js使用时的模块化问题，但研究了它的规则之后，我发现在某些情况下还是可能加载多次。现在我们便来分析这个问题。</p>
+            <a href="#" title="Node.js中相同模块是否会被加载多次？" class="desc_link">阅读全文</a>
+        </div>
+
+    <ul class="metadata">
+        <li class="icon comment">
+                <a href="#">
+                    17
+                    Comments
+                </a>
+            </li>
+        <li class="icon cat"><strong>Categories: </strong>
+            <a href="#">语言编程</a>, <a href="#">项目扩展</a></li>
+        <li class="icon bullet"><strong>Tags: </strong>
+            <a href="#">Jscex</a>, <a href="#">Node.js</a>, <a href="#">模块</a></li>
+    </ul>
+</section>
+
+<section class="post">
+    <h1> 
+        <a href="#">受禁锢的异步编程思维</a></h1> 
+    <small>
+        2011-12-19 13:49
+        <!-- 2011-12-27 15:17 -->
+        by
+        老赵,
+        2135
+        visits</small>
+    <div class="entry">
+        <strong>摘要：</strong>最近一直在努力推广，补充了很多中文文档和示例，因此博客上都已经有两篇文章有了“上”而没有“下”，即使最复杂的图示也已经绘制完毕。在推广Jscex的过程中，我发现有个比较明显的问题是，许多使用JavaScript的程序员已经习惯旧有的操作方式，甚至推崇一些据说很漂亮“模式”。但其实跟许多GoF模式是在修补OO语言的不足类似，很多异步模式都只是因为JavaScript语言特性不足而设计出来的“权宜之计”。我们在传统JavaScript编程环境下并没有其他选择，单纯地认为这是“美”，说实话只不过是一种安慰罢了。
+            <a href="#" title="受禁锢的异步编程思维" class="desc_link">阅读全文</a>
+        </div>
+
+    <ul class="metadata">
+        <li class="icon comment">
+                <a href="#">
+                    62
+                    Comments
+                </a>
+            </li>
+        <li class="icon cat"><strong>Categories: </strong>
+            <a href="#">语言编程</a>, <a href="#">前端表现</a>, <a href="#">项目扩展</a></li>
+        <li class="icon bullet"><strong>Tags: </strong>
+            <a href="#">Jscex</a>, <a href="#">异步</a></li>
+    </ul>
+</section>
+
+<section class="post">
+    <h1> 
+        <a href="#">Jscex正式发布至npm</a></h1> 
+    <small>
+        2011-12-01 06:23
+        <!-- 2011-12-28 04:26 -->
+        by
+        老赵,
+        1866
+        visits</small>
+    <div class="entry">
+        <strong>摘要：</strong>之前一直不敢将Jscex发布至npm上，因为有些问题还没有完全拿定主意，例如“取消”任务的模型。一个异步任务一定是需要取消功能，尽管这个模型不一定需要直接定义在Jscex里。但是我还是为Jscex提供了一个统一的标准化的取消模型，一是易于使用，二是提供模型这个之后，API在设计时可以有更多表现力（例如，现在的task的status可能是canceled了）。上周末我实现这个模型（其实也就十几二十行代码），昨天我又修改了模块的加载方式，使其支持CommonJS规范。在发布到npm之后，现在可以说Jscex已经正式对外公开了！
+            <a href="#" title="Jscex正式发布至npm" class="desc_link">阅读全文</a>
+        </div>
+
+    <ul class="metadata">
+        <li class="icon comment">
+                <a href="#">
+                    22
+                    Comments
+                </a>
+            </li>
+        <li class="icon cat"><strong>Categories: </strong>
+            <a href="#">项目扩展</a>, <a href="#">新闻信息</a></li>
+        <li class="icon bullet"><strong>Tags: </strong>
+            <a href="#">Jscex</a>, <a href="#">Node.js</a>, <a href="#">npm</a>, <a href="#">jscex-jit</a>, <a href="#">jscex-async</a></li>
+    </ul>
+</section>
+
+<section class="post">
+    <h1> 
+        <a href="#">尾递归对时间与空间复杂度的影响（上）</a></h1> 
+    <small>
+        2011-11-15 14:12
+        <!-- 2011-11-16 06:29 -->
+        by
+        老赵,
+        1863
+        visits</small>
+    <div class="entry">
+        <strong>摘要：</strong>以前我也在博客上简单谈过“尾递归”及其优化方式方面的话题。前几天有同学在写邮件向我提问，说是否所有的递归算法都能改写为尾递归，改写成尾递归之后，是否在时间和空间复杂度方面都能有所提高？他以斐波那契数列为例，似乎的确是这样的情况。我当时的回答有些简单，后来细想之后似乎感觉有点问题，而在仔细操作之后发现事情并没有理论上那么简单，因此还是计划写篇文章来讨论下这方面的问题。
+            <a href="#" title="尾递归对时间与空间复杂度的影响（上）" class="desc_link">阅读全文</a>
+        </div>
+
+    <ul class="metadata">
+        <li class="icon comment">
+                <a href="#">
+                    36
+                    Comments
+                </a>
+            </li>
+        <li class="icon cat"><strong>Categories: </strong>
+            <a href="#">语言编程</a></li>
+        <li class="icon bullet"><strong>Tags: </strong>
+            <a href="#">尾递归</a></li>
+    </ul>
+</section>
+
+<section class="post">
+    <h1> 
+        <a href="#">挖坟鞭尸：当年Sun公司的白皮书《About Microsoft “Delegates”》</a></h1> 
+    <small>
+        2011-11-08 17:07
+        <!-- 2011-11-09 01:47 -->
+        by
+        老赵,
+        3172
+        visits</small>
+    <div class="entry">
+        <strong>摘要：</strong>这是一桩当年的Sun公司与Java的旧事，还要追溯到C#还没出现，微软还在搞J++的时代。这篇著名的白皮书便是《About Microsoft “Delegates”》，其中列出了Sun眼中的Delegate的多个缺点。最后，在白皮书里信誓旦旦地写到：“Bound Method Reference并不是语言发展的正确道路”。我的感觉是：不谈Java语言设计者的水平如何，至少这篇白皮书的作者，在语言设计的能力或品味上几乎落后了Anders Hejlsberg十年。从我之前翻译过的一篇文章来看，Anders一直扮演着指引语言发展方向的作用，这也是为什么C#在这十年的发展能比Java要健康得多的主要原因之一。
+            <a href="#" title="挖坟鞭尸：当年Sun公司的白皮书《About Microsoft “Delegates”》" class="desc_link">阅读全文</a>
+        </div>
+
+    <ul class="metadata">
+        <li class="icon comment">
+                <a href="#">
+                    109
+                    Comments
+                </a>
+            </li>
+        <li class="icon cat"><strong>Categories: </strong>
+            <a href="#">语言编程</a></li>
+        <li class="icon bullet"><strong>Tags: </strong>
+            <a href="#">Sun</a>, <a href="#">Java</a>, <a href="#">Delegate</a>, <a href="#">C#</a></li>
+    </ul>
+</section>
+
+<section class="post">
+    <h1> 
+        <a href="#">老赵书托（4）：浪潮之巅（内含牢骚，不喜勿入）</a></h1> 
+    <small>
+        2011-11-06 06:35
+        <!-- 2011-11-08 16:39 -->
+        by
+        老赵,
+        6508
+        visits</small>
+    <div class="entry">
+        <strong>摘要：</strong>我是一个码农，一个很彻底，很标准的码农，自认为比我遇到过的绝大部分技术人员要码农得多。我喜欢搞技术，玩技术，不喜欢搞管理，搞人，或是搞产品等等。我是死脑筋，凡事都要想很多遍，想个明白，想不明白就不表态。我不喜欢猜测，不喜欢无法验证的事物，因此我成不了那种常见的，著名的，经常指点江山的分析师。每次有人问我对某某事物未来的看法，十有八九我只会婉言谢绝。其实照我的个人口味，我是不太会对《浪潮之巅》这中类型的书感兴趣的，但之前在网上看过谷歌黑板报上的连载，感觉不错，因此也去“搞”来一本品读一番。
+            <a href="#" title="老赵书托（4）：浪潮之巅（内含牢骚，不喜勿入）" class="desc_link">阅读全文</a>
+        </div>
+
+    <ul class="metadata">
+        <li class="icon comment">
+                <a href="#">
+                    75
+                    Comments
+                </a>
+            </li>
+        <li class="icon cat"><strong>Categories: </strong>
+            <a href="#">阅读相关</a></li>
+        <li class="icon bullet"><strong>Tags: </strong>
+            <a href="#">书籍推荐</a>, <a href="#">浪潮之巅</a>, <a href="#">Borland传奇</a>, <a href="#">观止</a></li>
+    </ul>
+</section>
+
+<section class="post">
+    <h1> 
+        <a href="#">使用Mono.Cecil辅助ASP.NET MVC使用dynamic类型Model</a></h1> 
+    <small>
+        2011-09-05 16:21
+        <!-- 2011-09-05 17:40 -->
+        by
+        老赵,
+        3512
+        visits</small>
+    <div class="entry">
+        <strong>摘要：</strong>这也是之前在珠三角技术沙龙上的示例之一，解决的是在ASP.NET MVC使用dynamic类型Model时遇到的一个真实问题。C# 4编译器支持dynamic类型，因此在编写页面模板的时候自然就可以把它作为视图的Model类型。表现层的需求很容易改变，因此dynamic类型的Model可以减少我们反复修改强类型Model的麻烦，再配合匿名类型的使用，可谓是动静相宜，如鱼得水。不过，如果把一个匿名类型直接作为Model交给视图去使用，在默认情况下会抛出异常。我们可以用Mono.Cecil来改变这一情况。
+            <a href="#" title="使用Mono.Cecil辅助ASP.NET MVC使用dynamic类型Model" class="desc_link">阅读全文</a>
+        </div>
+
+    <ul class="metadata">
+        <li class="icon comment">
+                <a href="#">
+                    86
+                    Comments
+                </a>
+            </li>
+        <li class="icon cat"><strong>Categories: </strong>
+            <a href="#">.Net框架</a>, <a href="#">实践优化</a></li>
+        <li class="icon bullet"><strong>Tags: </strong>
+            <a href="#">Mono</a>, <a href="#">Cecil</a>, <a href="#">ASP.NET MVC</a>, <a href="#">dynamic</a></li>
+    </ul>
+</section>
+
+<section class="post">
+    <h1> 
+        <a href="#">在.NET平台下使用C#交互式控制台（上）：简介</a></h1> 
+    <small>
+        2011-08-31 16:25
+        <!-- 2011-09-01 01:25 -->
+        by
+        老赵,
+        3438
+        visits</small>
+    <div class="entry">
+        <strong>摘要：</strong>上周日在广州的珠三角技术沙龙上，我的演讲题目是“Mono之于.NET程序员”。Mono一直是我十分喜爱的产品，我也一直关注它的发展，总有很多人用各种方式对它进行FUD，甚至是.NET程序员自己。这其实跟程序员使用盗版一样，自掘坟墓，是种无比愚蠢的行为。在演讲中，我提到.NET程序员可以如何从Mono项目中得到帮助，现在便以C#交互式控制台为例，演示下在.NET平台下使用Mono项目的常见方式。
+            <a href="#" title="在.NET平台下使用C#交互式控制台（上）：简介" class="desc_link">阅读全文</a>
+        </div>
+
+    <ul class="metadata">
+        <li class="icon comment">
+                <a href="#">
+                    47
+                    Comments
+                </a>
+            </li>
+        <li class="icon cat"><strong>Categories: </strong>
+            <a href="#">.Net框架</a>, <a href="#">实践优化</a>, <a href="#">技术尝鲜</a></li>
+        <li class="icon bullet"><strong>Tags: </strong>
+            <a href="#">Mono</a>, <a href="#">交互式控制台</a>, <a href="#">REPL</a></li>
+    </ul>
+</section>
+
+<section class="post">
+    <h1> 
+        <a href="#">谈谈年度最佳代码“不管你们信不信，反正我信了”</a></h1> 
+    <small>
+        2011-08-05 15:15
+        <!-- 2011-08-06 05:58 -->
+        by
+        老赵,
+        12288
+        visits</small>
+    <div class="entry">
+        <strong>摘要：</strong>最近有段十分流行的代码，是从江湖传闻“身怀八蛋”的铁道部发言人王勇平同志的一句名言：“不管你们信不信，反正我信了……这是生命的奇迹……它就是发生了”所引申出来的。这段代码虽然只是在调侃，但是围绕这段代码也产生了一些讨论（如代码风格，编程规范等等），在此顺手记录一下，就当无聊罢。
+            <a href="#" title="谈谈年度最佳代码“不管你们信不信，反正我信了”" class="desc_link">阅读全文</a>
+        </div>
+
+    <ul class="metadata">
+        <li class="icon comment">
+                <a href="#">
+                    65
+                    Comments
+                </a>
+            </li>
+        <li class="icon cat"><strong>Categories: </strong>
+            <a href="#">语言编程</a>, <a href="#">实践优化</a></li>
+        <li class="icon bullet"><strong>Tags: </strong>
+            <a href="#">风格</a>, <a href="#">语义</a>, <a href="#">副作用</a>, <a href="#">优化</a></li>
+    </ul>
+</section>
+
+<section class="post">
+    <h1> 
+        <a href="#">基于Node.js、Express和Jscex开发的ToDo网站示例</a></h1> 
+    <small>
+        2011-07-15 06:33
+        <!-- 2011-07-15 08:57 -->
+        by
+        老赵,
+        7274
+        visits</small>
+    <div class="entry">
+        <strong>摘要：</strong>Jscex的主要使用场景是“JavaScript异步编程”，并不限制是跑在浏览器还是服务器端。最近Node.js很火热，也刚发布了原生的Windows版，不少同学也用它来做一些网站这样的小程序。目前用Node.js开发网站最著名的框架是Express，使用起来也是比较容易的。前段时间看到CNodeJS社区的一篇文章，某同学将一个Python写的ToDo列表网站移植到了Node.js上，我为了推广Jscex，就fork了这个项目，将其修改为基于Jscex的版本，大伙儿可以来比较一下。当然这个网站过于简单，我也正在寻找更合适的项目。
+            <a href="#" title="基于Node.js、Express和Jscex开发的ToDo网站示例" class="desc_link">阅读全文</a>
+        </div>
+
+    <ul class="metadata">
+        <li class="icon comment">
+                <a href="#">
+                    15
+                    Comments
+                </a>
+            </li>
+        <li class="icon cat"><strong>Categories: </strong>
+            <a href="#">前端表现</a>, <a href="#">项目扩展</a></li>
+        <li class="icon bullet"><strong>Tags: </strong>
+            <a href="#">Jscex</a>, <a href="#">Node.js</a>, <a href="#">Express</a></li>
+    </ul>
+</section>
+
+<section class="post">
+    <h1> 
+        <a href="#">从今开始远离纸版图书</a></h1> 
+    <small>
+        2011-07-07 16:07
+        <!-- 2011-07-13 14:35 -->
+        by
+        老赵,
+        7488
+        visits</small>
+    <div class="entry">
+        <strong>摘要：</strong>纸版图书的历史实在太长了，似乎也已经看得到它被淘汰的那一天。这几天在为去深圳做准备，手边许多技术图书都成了大问题。搬去深圳会大动干戈，况且这些书基本也都只是偶尔翻阅一下，不太可能再认真读起。但如果把它们留在上海，那跟空置也没什么区别。以前我有个习惯，看到经典的书，在看完电子版或国内引进版之后都会买本英文原版的来“收藏”，现在已经“幡然醒悟”，之前也已经转让了一部分。现在除了一部分书，都打算出手了。这里开了个书单，感兴趣的同学可以各取所需。
+            <a href="#" title="从今开始远离纸版图书" class="desc_link">阅读全文</a>
+        </div>
+
+    <ul class="metadata">
+        <li class="icon comment">
+                <a href="#">
+                    45
+                    Comments
+                </a>
+            </li>
+        <li class="icon cat"><strong>Categories: </strong>
+            <a href="#">阅读相关</a>, <a href="#">新闻信息</a></li>
+        <li class="icon bullet"><strong>Tags: </strong>
+            <a href="#">图书</a>, <a href="#">出售</a></li>
+    </ul>
+</section>
+
+<section class="post">
+    <h1> 
+        <a href="#">IBM面试记</a></h1> 
+    <small>
+        2011-07-02 15:29
+        <!-- 2011-07-03 08:57 -->
+        by
+        老赵,
+        14077
+        visits</small>
+    <div class="entry">
+        <strong>摘要：</strong>话说其实我很久没有被正经面试过了。一开始去微软实习自然经过了经典的笔试和几轮面试，然后去了朋友的创业公司并立即被激动集团收编——没有面试，接着从激动集团去合伙创业——没有面试，然后被朋友推荐去盛大创新院——面试更像是讨论及聊天。由于长久缺乏职场磨练，我虽然对自己能力有一定能力，但也怀疑自己如果通过“正经渠道”去面试的话能有多少机会成功。这次面试IBM终于算是过足了面试瘾，记录一下。
+            <a href="#" title="IBM面试记" class="desc_link">阅读全文</a>
+        </div>
+
+    <ul class="metadata">
+        <li class="icon comment">
+                <a href="#">
+                    99
+                    Comments
+                </a>
+            </li>
+        <li class="icon cat"><strong>Categories: </strong>
+            <a href="#">思考讨论</a>, <a href="#">.Net框架</a>, <a href="#">实践优化</a></li>
+        <li class="icon bullet"><strong>Tags: </strong>
+            <a href="#">IBM</a>, <a href="#">面试</a></li>
+    </ul>
+</section>
