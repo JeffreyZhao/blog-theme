@@ -263,7 +263,18 @@
         </aside>
         
         <div id="main">
-            <script> render("list"); </script>
+            <ul id="tempList" style="display:none; font-size: 30px;">
+                <li><a href="?render=list">List</a></li>
+                <li><a href="?render=detail">Detail</a></li>
+            </ul>
+            <script>
+                var m = window.location.search.match(/render=(\w+)/);
+                if (m) {
+                    render(m[1]);
+                } else {
+                    $("#tempList").show();
+                }
+            </script>
         </div>
         
         <div id="pager">
